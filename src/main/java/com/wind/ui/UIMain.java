@@ -3,6 +3,8 @@ package com.wind.ui;
 import com.wind.util.Const;
 
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -29,7 +31,8 @@ public class UIMain {
 
     public static void main(String[] args) {
         try {
-            SwingUtilities.invokeAndWait(() ->{
+            SwingUtilities.invokeAndWait(() -> {
+                System.out.println("=======================启动游戏========================");
                 new UIMain().init();
             });
         } catch (InterruptedException e) {

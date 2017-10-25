@@ -65,15 +65,14 @@ public class MainPanel extends JPanel{
             public void mouseExited(MouseEvent e) {
                 setGameStatus(GameStatus.PAUSE);
             }
+        });
 
+        this.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
                 int x = e.getX();
                 int y = e.getY();
-                System.out.println(x + "," + y);
-                /*hero.setX(x);
-                hero.setY(y);
-                repaint();*/
+                hero.moveTo(x, y);
             }
         });
     }
@@ -121,6 +120,5 @@ public class MainPanel extends JPanel{
 
     public void setGameStatus(GameStatus gameStatus) {
         this.gameStatus = gameStatus;
-        this.repaint();
     }
 }
